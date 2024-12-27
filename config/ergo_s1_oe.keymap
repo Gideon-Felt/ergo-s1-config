@@ -17,7 +17,7 @@
 #define COMBO(NAME, BINDINGS, KEYPOS) \
   combo_##NAME { \
     timeout-ms = <175>; \
-    bindings = <BINDINGS>; \
+    bindings = <BINDINGS>; \  
     key-positions = <KEYPOS>; \
     layers = <0>; \
   };
@@ -39,7 +39,7 @@
 
        macros {
               fst_cp: fst_cp {
-                     // label = "single_key_copy";
+                     label = "single_key_copy";
                      compatible = "zmk,behavior-macro";
                      #binding-cells = <0>;
                      bindings
@@ -49,7 +49,7 @@
                             ;
               };
               fst_pt: fst_pt {
-                     // label = "single_key_paste";
+                     label = "single_key_paste";
                      compatible = "zmk,behavior-macro";
                      #binding-cells = <0>;
                      bindings
@@ -60,7 +60,7 @@
               };
 //            Paste with no formatting
               sft_pt: sft_pt {
-                     // label = "Paste with no formatting";
+                     label = "Paste with no formatting";
                      compatible = "zmk,behavior-macro";
                      #binding-cells = <0>;
                      bindings
@@ -70,7 +70,7 @@
                             ;
               };
               spc_l: spc_l {
-                     // label = "Change Virtual Desktop Left";
+                     label = "Change Virtual Desktop Left";
                      compatible = "zmk,behavior-macro";
                      #binding-cells = <0>;
                      bindings
@@ -80,7 +80,7 @@
                             ;
               };
               spc_r: spc_r {
-                     // label = "Change Virtual Desktop Right";
+                     label = "Change Virtual Desktop Right";
                      compatible = "zmk,behavior-macro";
                      #binding-cells = <0>;
                      bindings
