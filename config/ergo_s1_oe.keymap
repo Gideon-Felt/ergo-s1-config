@@ -17,16 +17,15 @@
 #define COMBO(NAME, BINDINGS, KEYPOS) \
   combo_##NAME { \
     timeout-ms = <175>; \
-    bindings = <BINDINGS>; \  
+    bindings = <BINDINGS>; \
     key-positions = <KEYPOS>; \
     layers = <0>; \
   };
 
 / {
        
-       combos {
+       /*combos {
               compatible = "zmk,combos";
-              
               // COMBO(zmk_studio_unlock,    &studio_unlock, 53 0)
               COMBO(go_to_function_layer, &tog FN, 53 54)
               COMBO(go_to_numpd_layer,    &tog NUMPD, 53 55)
@@ -35,7 +34,7 @@
               COMBO(bt_profile_three,     &bt BT_SEL 2, 53 3)
               COMBO(bt_profile_four,      &bt BT_SEL 3, 53 4)
               COMBO(bt_profile_five,      &bt BT_SEL 4, 53 5)
-       };
+       };*/
 
        macros {
               fst_cp: fst_cp {
@@ -122,10 +121,10 @@
 //                                                             |      |         |      |
                      bindings = <
         &kp F1     &kp F2  &kp F3   &kp F4   &kp F5    &kp F6                                                                    &kp F7    &kp F8    &kp F9    &kp F10   &kp F11 &kp F12
-        &to 0      &to 0   &to 0    &to 0    &to 0     &to 0                                                                     &to 0     &to 0     &to 0     &to 0     &sft_pt  &to 0 
+        &to 0      &to 0   &to 0    &to 0    &to 0     &to 0                                                                     &to 0     &to 0     &to 0     &to 0     &sft_pt  &to 0
         &bt BT_CLR &to 0   &to 0    &to 0    &spc_l    &to 0                                                                     &to 0     &spc_r    &to 0     &to 0     &to 0    &to 0
-        &to 0      &to 0   &to 0    &fst_cp  &fst_pt   &kp PSCRN           &to 0     &to 0         &to 0     &to 0               &to 0     &to 0     &to 0     &to 0     &to 0    &to 0 
-                   &kp INS &to 0    &to 0    &to 0               &to 0     &to 0     &to 0         &to 0     &to 0     &to 0               &to 0     &to 0     &to 0     &to 0 
+        &to 0      &to 0   &to 0    &fst_cp  &fst_pt   &kp PSCRN           &to 0     &to 0         &to 0     &to 0               &to 0     &to 0     &to 0     &to 0     &to 0    &to 0
+                   &kp INS &to 0    &to 0    &to 0               &to 0     &to 0     &to 0         &to 0     &to 0     &to 0               &to 0     &to 0     &to 0     &to 0
                                                                                      &to 0         &to 0     
                      >;
               };
@@ -139,8 +138,8 @@
 //                                                             |      |         |      |
               
                      bindings = <
-        &to 0      &to 0   &to 0    &to 0    &to 0     &to 0                                                                     &to 0     &kp KP_NUM &kp EQL   &kp SLASH &kp STAR  &to 0 
-        &to 0      &to 0   &to 0    &to 0    &to 0     &to 0                                                                     &to 0     &kp N7     &kp N8    &kp N9    &kp MINUS &to 0 
+        &to 0      &to 0   &to 0    &to 0    &to 0     &to 0                                                                     &to 0     &kp KP_NUM &kp EQL   &kp SLASH &kp STAR  &to 0
+        &to 0      &to 0   &to 0    &to 0    &to 0     &to 0                                                                     &to 0     &kp N7     &kp N8    &kp N9    &kp MINUS &to 0
         &bt BT_CLR &to 0   &to 0    &to 0    &to 0     &to 0                                                                     &to 0     &kp N4     &kp N5    &kp N6    &kp PLUS  &to 0
         &to 0      &to 0   &to 0    &to 0    &to 0     &to 0               &to 0     &to 0         &to 0     &to 0               &to 0     &kp N1     &kp N2    &kp N3    &kp ENTER &to 0 
                    &to 0   &to 0    &to 0    &to 0               &to 0     &to 0     &to 0         &to 0     &to 0     &kp N0              &to 0      &to 0     &kp DOT   &kp ENTER
