@@ -27,7 +27,7 @@
        
        combos {
               compatible = "zmk,combos";
-              COMBO(zmk_studio_unlock,    &studio_unlock, 53 0)
+              // COMBO(zmk_studio_unlock,    &studio_unlock, 53 0)
               COMBO(go_to_function_layer, &tog FN, 53 54)
               COMBO(go_to_numpd_layer,    &tog NUMPD, 53 55)
               COMBO(bt_profile_one,       &bt BT_SEL 0, 53 1)
