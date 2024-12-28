@@ -13,6 +13,7 @@
 #define DEFAULT 0
 #define FN      1
 #define NUMPD   2
+#define EXTRA1  3
 
 #define COMBO(NAME, BINDINGS, KEYPOS) \
   combo_##NAME { \
@@ -24,7 +25,7 @@
 
 / {
        
-       /*combos {
+       combos {
               compatible = "zmk,combos";
               // COMBO(zmk_studio_unlock,    &studio_unlock, 53 0)
               COMBO(go_to_function_layer, &tog FN, 53 54)
@@ -34,7 +35,7 @@
               COMBO(bt_profile_three,     &bt BT_SEL 2, 53 3)
               COMBO(bt_profile_four,      &bt BT_SEL 3, 53 4)
               COMBO(bt_profile_five,      &bt BT_SEL 4, 53 5)
-       };*/
+       };
 
        macros {
               fst_cp: fst_cp {
@@ -145,8 +146,8 @@
                                                                                      &to 0         &to 0
                      >;
               };
-              // extra1 {
-              //        status = "reserved";
-              // };
+              extra1 {
+                     status = "reserved";
+              };
     };
 };
