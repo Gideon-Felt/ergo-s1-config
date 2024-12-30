@@ -17,7 +17,7 @@
 
 #define COMBO(NAME, BINDINGS, KEYPOS) \
   combo_##NAME { \
-    timeout-ms = <375>; \
+    timeout-ms = <475>; \
     bindings = <BINDINGS>; \
     key-positions = <KEYPOS>; \
     layers = <0>; \
@@ -37,25 +37,25 @@
               COMBO(bt_profile_five,      &bt BT_SEL 4, 53 5)
               // combos to enable the standard symbols in the top row. (using CTRL key(s) instead for now).
               COMBO(lshift_to_bang,        &kp EXCL, 42 1)
-              COMBO(rshift_to_bang,        &kp EXCL, 44 1)
+              COMBO(rshift_to_bang,        &kp EXCL, 45 1)
               COMBO(lshift_to_at_sign,     &kp AT_SIGN, 42 2)
-              COMBO(rshift_to_at_sign,     &kp AT_SIGN, 44 2)
+              COMBO(rshift_to_at_sign,     &kp AT_SIGN, 45 2)
               COMBO(lshift_to_hash,        &kp HASH, 42 3)
-              COMBO(rshift_to_hash,        &kp HASH, 44 3)
+              COMBO(rshift_to_hash,        &kp HASH, 45 3)
               COMBO(lshift_to_dollar,      &kp DOLLAR, 42 4)
-              COMBO(rshift_to_dollar,      &kp DOLLAR, 44 4)
+              COMBO(rshift_to_dollar,      &kp DOLLAR, 45 4)
               COMBO(lshift_to_percent,     &kp PERCENT, 42 5)
-              COMBO(rshift_to_percent,     &kp PERCENT, 44 5)
+              COMBO(rshift_to_percent,     &kp PERCENT, 45 5)
               COMBO(lshift_to_carrot,      &kp CARET, 42 6)
-              COMBO(rshift_to_carrot,      &kp CARET, 44 6)
+              COMBO(rshift_to_carrot,      &kp CARET, 45 6)
               COMBO(lshift_to_ampersand,   &kp AMPERSAND, 42 7)
-              COMBO(rshift_to_ampersand,   &kp AMPERSAND, 44 7)
+              COMBO(rshift_to_ampersand,   &kp AMPERSAND, 45 7)
               COMBO(lshift_to_asterisk,    &kp ASTERISK, 42 8)
-              COMBO(rshift_to_asterisk,    &kp ASTERISK, 44 8)
+              COMBO(rshift_to_asterisk,    &kp ASTERISK, 45 8)
               COMBO(lshift_to_lpar,        &kp LPAR, 42 9)
-              COMBO(rshift_to_lpar,        &kp LPAR, 44 9)
+              COMBO(rshift_to_lpar,        &kp LPAR, 45 9)
               COMBO(lshift_to_rpar,        &kp RPAR, 42 10)
-              COMBO(rshift_to_rpar,        &kp RPAR, 44 10)
+              COMBO(rshift_to_rpar,        &kp RPAR, 45 10)
        };
 
        macros {
