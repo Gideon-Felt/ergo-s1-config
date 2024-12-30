@@ -31,8 +31,17 @@
     slow-release; \
   };
 
+
+
 / {
-       
+       behaviors {
+              grbang: grave_exclamation {
+                     compatible = "zmk,behavior-mod-morph";
+                     #binding-cells = <0>;
+                     bindings = <&kp GRAVE>, <&kp EXCL>;
+                     mods = <(MOD_LGUI|MOD_LSFT|MOD_RGUI|MOD_RSFT)>;
+              };
+       };
        combos {
               compatible = "zmk,combos";
               // COMBO(zmk_studio_unlock,    &studio_unlock, 53 0)
@@ -44,8 +53,8 @@
               COMBO(bt_profile_four,      &bt BT_SEL 3, 53 4)
               COMBO(bt_profile_five,      &bt BT_SEL 4, 53 5)
               // combos to enable the standard symbols in the top row. (using CTRL key(s) instead for now).
-              GCOMBO(lshift_to_bang,        &kp EXCL, 42 1)
-              GCOMBO(rshift_to_bang,        &kp EXCL, 45 1)
+              // GCOMBO(lshift_to_bang,        &kp EXCL, 42 1)
+              // GCOMBO(rshift_to_bang,        &kp EXCL, 45 1)
               GCOMBO(lshift_to_at_sign,     &kp AT_SIGN, 42 2)
               GCOMBO(rshift_to_at_sign,     &kp AT_SIGN, 45 2)
               GCOMBO(lshift_to_hash,        &kp HASH, 42 3)
@@ -142,7 +151,7 @@
 //            | GRV  | MOD  | LEFT | RGHT |      | BSPC | DEL  | HOME |         | PGDN | ENT  | SPC  |      |  UP  |  DN  | LBKT | RBKT |
 //                                                             | END  |         | WIN  |
                      bindings = <
-        &kp EQUAL  &mt GRAVE EXCL &kp LBKT &kp LBRC &kp LPAR  &kp HOME                                                                  &kp END   &kp RPAR  &kp RBRC  &kp RBKT     &jtbr_cmt &kp MINUS
+        &kp EQUAL  &grbang &kp LBKT &kp LBRC &kp LPAR  &kp HOME                                                                  &kp END   &kp RPAR  &kp RBRC  &kp RBKT     &jtbr_cmt &kp MINUS
         &kp TAB    &kp Q     &kp W    &kp E    &kp R     &kp T                                                                     &kp Y     &kp U     &kp I     &kp O        &kp P     &kp BSLH
         &kp ESC    &kp A     &kp S    &kp D    &kp F     &kp G                                                                     &kp H     &kp J     &kp K     &kp L        &kp SEMI  &kp APOS
         &sk LSHFT  &kp Z     &kp X    &kp C    &kp V     &kp B               &sk LCTRL &kp LALT      &kp PG_UP &sk RCTRL           &kp N     &kp M     &kp COMMA &kp PERIOD   &kp SLASH &sk RSHFT
