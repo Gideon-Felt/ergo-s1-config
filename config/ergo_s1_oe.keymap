@@ -77,14 +77,7 @@
                      bindings = <&kp END>, <&kp CARET>;
                      mods = <(MOD_LGUI|MOD_LSFT|MOD_RGUI|MOD_RSFT)>;
               };
-              rpar_and: end_carrot {
-                     label = "RPAR | AMPERSAND";
-                     compatible = "zmk,behavior-mod-morph";
-                     #binding-cells = <0>;
-                     bindings = <&kp RPAR>, <&kp AMPERSAND>;
-                     mods = <(MOD_LGUI|MOD_LSFT|MOD_RGUI|MOD_RSFT)>;
-              };
-              rpar_and: end_carrot {
+              rpar_and: right_parenthesis_ampersand {
                      label = "RPAR | AMPERSAND";
                      compatible = "zmk,behavior-mod-morph";
                      #binding-cells = <0>;
@@ -105,9 +98,8 @@
                      bindings = <&kp RBKT>, <&kp LPAR>;
                      mods = <(MOD_LGUI|MOD_LSFT|MOD_RGUI|MOD_RSFT)>;
               };
-              //&jtbr_cmt
               JbsCmt_rpar: JetBrainsComment_rpar {
-                     label = "JetBrains Comment | RPAR";
+                     label = "JetBrains Comment Combo | RPAR";
                      compatible = "zmk,behavior-mod-morph";
                      #binding-cells = <0>;
                      bindings = <&jtbr_cmt>, <&kp RPAR>;
@@ -222,11 +214,11 @@
 //            | GRV  | MOD  | LEFT | RGHT |      | BSPC | DEL  | HOME |         | PGDN | ENT  | SPC  |      |  UP  |  DN  | LBKT | RBKT |
 //                                                             | END  |         | WIN  |
                      bindings = <
-        &kp EQUAL  &gr_bang &kp LBKT &kp LBRC &kp LPAR  &kp HOME                                                                  &kp END   &kp RPAR  &kp RBRC  &kp RBKT     &JbsCmt_rpar &kp MINUS
-        &kp TAB    &kp Q     &kp W    &kp E    &kp R     &kp T                                                                     &kp Y     &kp U     &kp I     &kp O        &kp P       &kp BSLH
-        &kp ESC    &kp A     &kp S    &kp D    &kp F     &kp G                                                                     &kp H     &kp J     &kp K     &kp L        &kp SEMI    &kp APOS
-        &sk LSHFT  &kp Z     &kp X    &kp C    &kp V     &kp B               &sk LCTRL &kp LALT      &kp PG_UP &sk RCTRL           &kp N     &kp M     &kp COMMA &kp PERIOD   &kp SLASH   &sk RSHFT
-                   &kp TILDE &to 0    &kp LEFT &kp RIGHT           &kp BSPC  &kp DEL   &kp HOME      &kp PG_DN &kp ENTER &kp SPACE           &kp UP    &kp DOWN  &kp LBKT     &kp RBKT
+        &kp EQUAL  &gr_bang  &kp LBKT &kp LBRC &kp LPAR  &kp HOME                                                                  &kp END   &kp RPAR  &kp RBRC  &kp RBKT   &JbsCmt_rpar &kp MINUS
+        &kp TAB    &kp Q     &kp W    &kp E    &kp R     &kp T                                                                     &kp Y     &kp U     &kp I     &kp O      &kp P        &kp BSLH
+        &kp ESC    &kp A     &kp S    &kp D    &kp F     &kp G                                                                     &kp H     &kp J     &kp K     &kp L      &kp SEMI     &kp APOS
+        &sk LSHFT  &kp Z     &kp X    &kp C    &kp V     &kp B               &sk LCTRL &kp LALT      &kp PG_UP &sk RCTRL           &kp N     &kp M     &kp COMMA &kp PERIOD &kp SLASH    &sk RSHFT
+                   &kp TILDE &to 0    &kp LEFT &kp RIGHT           &kp BSPC  &kp DEL   &kp HOME      &kp PG_DN &kp ENTER &kp SPACE           &kp UP    &kp DOWN  &kp LBKT   &kp RBKT
                                                                                        &kp END       &kp LGUI
                      >;
               };
