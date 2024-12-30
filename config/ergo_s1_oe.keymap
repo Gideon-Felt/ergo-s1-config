@@ -28,7 +28,7 @@
     timeout-ms = <475>; \
     bindings = <BINDINGS>; \
     key-positions = <KEYPOS>; \
-    slow-release = true; \
+    slow-release; \
   };
 
 / {
