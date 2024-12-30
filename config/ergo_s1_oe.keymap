@@ -23,25 +23,97 @@
     layers = <0>; \
   };
 
-#define GCOMBO(NAME, BINDINGS, KEYPOS) \
-  combo_##NAME { \
-    timeout-ms = <475>; \
-    bindings = <BINDINGS>; \
-    key-positions = <KEYPOS>; \
-    slow-release; \
-  };
+// #define GCOMBO(NAME, BINDINGS, KEYPOS) \
+//   combo_##NAME { \
+//     timeout-ms = <475>; \
+//     bindings = <BINDINGS>; \
+//     key-positions = <KEYPOS>; \
+//     slow-release; \
+//   };
 
 
 
 / {
        behaviors {
-              grbang: grave_exclamation {
+              gr_bang: grave_exclamation {
                      label = "Grave | Exclamation";
                      compatible = "zmk,behavior-mod-morph";
                      #binding-cells = <0>;
                      bindings = <&kp GRAVE>, <&kp EXCL>;
                      mods = <(MOD_LGUI|MOD_LSFT|MOD_RGUI|MOD_RSFT)>;
               };
+              lbkt_at: left_bracket_at_sign {
+                     label = "LBKT | AT_SIGN";
+                     compatible = "zmk,behavior-mod-morph";
+                     #binding-cells = <0>;
+                     bindings = <&kp LBKT>, <&kp AT_SIGN>;
+                     mods = <(MOD_LGUI|MOD_LSFT|MOD_RGUI|MOD_RSFT)>;
+              };
+              lbrc_hash: left_brace_hash {
+                     label = "LBRC | HASH";
+                     compatible = "zmk,behavior-mod-morph";
+                     #binding-cells = <0>;
+                     bindings = <&kp LBRC>, <&kp HASH>;
+                     mods = <(MOD_LGUI|MOD_LSFT|MOD_RGUI|MOD_RSFT)>;
+              };
+              lpar_usd: left_parenthesis_dollar {
+                     label = "LPAR | DOLLAR";
+                     compatible = "zmk,behavior-mod-morph";
+                     #binding-cells = <0>;
+                     bindings = <&kp LPAR>, <&kp DOLLAR>;
+                     mods = <(MOD_LGUI|MOD_LSFT|MOD_RGUI|MOD_RSFT)>;
+              };
+              home_perc: home_percent {
+                     label = "HOME | PERCENT";
+                     compatible = "zmk,behavior-mod-morph";
+                     #binding-cells = <0>;
+                     bindings = <&kp HOME>, <&kp PERCENT>;
+                     mods = <(MOD_LGUI|MOD_LSFT|MOD_RGUI|MOD_RSFT)>;
+              };
+              end_car: end_carrot {
+                     label = "END | CARET";
+                     compatible = "zmk,behavior-mod-morph";
+                     #binding-cells = <0>;
+                     bindings = <&kp END>, <&kp CARET>;
+                     mods = <(MOD_LGUI|MOD_LSFT|MOD_RGUI|MOD_RSFT)>;
+              };
+              rpar_and: end_carrot {
+                     label = "RPAR | AMPERSAND";
+                     compatible = "zmk,behavior-mod-morph";
+                     #binding-cells = <0>;
+                     bindings = <&kp RPAR>, <&kp AMPERSAND>;
+                     mods = <(MOD_LGUI|MOD_LSFT|MOD_RGUI|MOD_RSFT)>;
+              };
+              rpar_and: end_carrot {
+                     label = "RPAR | AMPERSAND";
+                     compatible = "zmk,behavior-mod-morph";
+                     #binding-cells = <0>;
+                     bindings = <&kp RPAR>, <&kp AMPERSAND>;
+                     mods = <(MOD_LGUI|MOD_LSFT|MOD_RGUI|MOD_RSFT)>;
+              };
+              rbrc_ast: right_brace_asterisk {
+                     label = "RBRC | ASTERISK";
+                     compatible = "zmk,behavior-mod-morph";
+                     #binding-cells = <0>;
+                     bindings = <&kp RBRC>, <&kp ASTERISK>;
+                     mods = <(MOD_LGUI|MOD_LSFT|MOD_RGUI|MOD_RSFT)>;
+              };
+              rbkt_lpar: right_bracket_lpar {
+                     label = "RBKT | LPAR";
+                     compatible = "zmk,behavior-mod-morph";
+                     #binding-cells = <0>;
+                     bindings = <&kp RBKT>, <&kp LPAR>;
+                     mods = <(MOD_LGUI|MOD_LSFT|MOD_RGUI|MOD_RSFT)>;
+              };
+              //&jtbr_cmt
+              JbsCmt_rpar: JetBrainsComment_rpar {
+                     label = "JetBrains Comment | RPAR";
+                     compatible = "zmk,behavior-mod-morph";
+                     #binding-cells = <0>;
+                     bindings = <&jtbr_cmt>, <&kp RPAR>;
+                     mods = <(MOD_LGUI|MOD_LSFT|MOD_RGUI|MOD_RSFT)>;
+              };
+
        };
        combos {
               compatible = "zmk,combos";
@@ -54,26 +126,24 @@
               COMBO(bt_profile_four,      &bt BT_SEL 3, 53 4)
               COMBO(bt_profile_five,      &bt BT_SEL 4, 53 5)
               // combos to enable the standard symbols in the top row. (using CTRL key(s) instead for now).
-              // GCOMBO(lshift_to_bang,        &kp EXCL, 42 1)
-              // GCOMBO(rshift_to_bang,        &kp EXCL, 45 1)
-              GCOMBO(lshift_to_at_sign,     &kp AT_SIGN, 42 2)
-              GCOMBO(rshift_to_at_sign,     &kp AT_SIGN, 45 2)
-              GCOMBO(lshift_to_hash,        &kp HASH, 42 3)
-              GCOMBO(rshift_to_hash,        &kp HASH, 45 3)
-              GCOMBO(lshift_to_dollar,      &kp DOLLAR, 42 4)
-              GCOMBO(rshift_to_dollar,      &kp DOLLAR, 45 4)
-              GCOMBO(lshift_to_percent,     &kp PERCENT, 42 5)
-              GCOMBO(rshift_to_percent,     &kp PERCENT, 45 5)
-              GCOMBO(lshift_to_carrot,      &kp CARET, 42 6)
-              GCOMBO(rshift_to_carrot,      &kp CARET, 45 6)
-              GCOMBO(lshift_to_ampersand,   &kp AMPERSAND, 42 7)
-              GCOMBO(rshift_to_ampersand,   &kp AMPERSAND, 45 7)
-              GCOMBO(lshift_to_asterisk,    &kp ASTERISK, 42 8)
-              GCOMBO(rshift_to_asterisk,    &kp ASTERISK, 45 8)
-              GCOMBO(lshift_to_lpar,        &kp LPAR, 42 9)
-              GCOMBO(rshift_to_lpar,        &kp LPAR, 45 9)
-              GCOMBO(lshift_to_rpar,        &kp RPAR, 42 10)
-              GCOMBO(rshift_to_rpar,        &kp RPAR, 45 10)
+              // GCOMBO(lshift_to_at_sign,     &kp AT_SIGN, 42 2)
+              // GCOMBO(rshift_to_at_sign,     &kp AT_SIGN, 45 2)
+              // GCOMBO(lshift_to_hash,        &kp HASH, 42 3)
+              // GCOMBO(rshift_to_hash,        &kp HASH, 45 3)
+              // GCOMBO(lshift_to_dollar,      &kp DOLLAR, 42 4)
+              // GCOMBO(rshift_to_dollar,      &kp DOLLAR, 45 4)
+              // GCOMBO(lshift_to_percent,     &kp PERCENT, 42 5)
+              // GCOMBO(rshift_to_percent,     &kp PERCENT, 45 5)
+              // GCOMBO(lshift_to_carrot,      &kp CARET, 42 6)
+              // GCOMBO(rshift_to_carrot,      &kp CARET, 45 6)
+              // GCOMBO(lshift_to_ampersand,   &kp AMPERSAND, 42 7)
+              // GCOMBO(rshift_to_ampersand,   &kp AMPERSAND, 45 7)
+              // GCOMBO(lshift_to_asterisk,    &kp ASTERISK, 42 8)
+              // GCOMBO(rshift_to_asterisk,    &kp ASTERISK, 45 8)
+              // GCOMBO(lshift_to_lpar,        &kp LPAR, 42 9)
+              // GCOMBO(rshift_to_lpar,        &kp LPAR, 45 9)
+              // GCOMBO(lshift_to_rpar,        &kp RPAR, 42 10)
+              // GCOMBO(rshift_to_rpar,        &kp RPAR, 45 10)
        };
 
        macros {
@@ -152,10 +222,10 @@
 //            | GRV  | MOD  | LEFT | RGHT |      | BSPC | DEL  | HOME |         | PGDN | ENT  | SPC  |      |  UP  |  DN  | LBKT | RBKT |
 //                                                             | END  |         | WIN  |
                      bindings = <
-        &kp EQUAL  &grbang &kp LBKT &kp LBRC &kp LPAR  &kp HOME                                                                  &kp END   &kp RPAR  &kp RBRC  &kp RBKT     &jtbr_cmt &kp MINUS
-        &kp TAB    &kp Q     &kp W    &kp E    &kp R     &kp T                                                                     &kp Y     &kp U     &kp I     &kp O        &kp P     &kp BSLH
-        &kp ESC    &kp A     &kp S    &kp D    &kp F     &kp G                                                                     &kp H     &kp J     &kp K     &kp L        &kp SEMI  &kp APOS
-        &sk LSHFT  &kp Z     &kp X    &kp C    &kp V     &kp B               &sk LCTRL &kp LALT      &kp PG_UP &sk RCTRL           &kp N     &kp M     &kp COMMA &kp PERIOD   &kp SLASH &sk RSHFT
+        &kp EQUAL  &gr_bang &kp LBKT &kp LBRC &kp LPAR  &kp HOME                                                                  &kp END   &kp RPAR  &kp RBRC  &kp RBKT     &JbsCmt_rpar &kp MINUS
+        &kp TAB    &kp Q     &kp W    &kp E    &kp R     &kp T                                                                     &kp Y     &kp U     &kp I     &kp O        &kp P       &kp BSLH
+        &kp ESC    &kp A     &kp S    &kp D    &kp F     &kp G                                                                     &kp H     &kp J     &kp K     &kp L        &kp SEMI    &kp APOS
+        &sk LSHFT  &kp Z     &kp X    &kp C    &kp V     &kp B               &sk LCTRL &kp LALT      &kp PG_UP &sk RCTRL           &kp N     &kp M     &kp COMMA &kp PERIOD   &kp SLASH   &sk RSHFT
                    &kp TILDE &to 0    &kp LEFT &kp RIGHT           &kp BSPC  &kp DEL   &kp HOME      &kp PG_DN &kp ENTER &kp SPACE           &kp UP    &kp DOWN  &kp LBKT     &kp RBKT
                                                                                        &kp END       &kp LGUI
                      >;
