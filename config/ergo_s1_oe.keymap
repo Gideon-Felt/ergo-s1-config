@@ -123,6 +123,7 @@
                      bindings
                             = <&macro_press &kp LCTRL>
                             , <&macro_tap &kp SLASH>
+                            , <&macro_release &kp LCTRL>
                             ;
               };
        };
