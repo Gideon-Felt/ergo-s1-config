@@ -35,6 +35,27 @@
               COMBO(bt_profile_three,     &bt BT_SEL 2, 53 3)
               COMBO(bt_profile_four,      &bt BT_SEL 3, 53 4)
               COMBO(bt_profile_five,      &bt BT_SEL 4, 53 5)
+              // combos to enable the standard symbols in the top row. (using CTRL key(s) instead for now).
+              COMBO(lshift_to_bang,        &kp EXCL, 42 1)
+              COMBO(rshift_to_bang,        &kp EXCL, 44 1)
+              COMBO(lshift_to_at_sign,     &kp AT_SIGN, 42 2)
+              COMBO(rshift_to_at_sign,     &kp AT_SIGN, 44 2)
+              COMBO(lshift_to_hash,        &kp HASH, 42 3)
+              COMBO(rshift_to_hash,        &kp HASH, 44 3)
+              COMBO(lshift_to_dollar,      &kp DOLLAR, 42 4)
+              COMBO(rshift_to_dollar,      &kp DOLLAR, 44 4)
+              COMBO(lshift_to_percent,     &kp PERCENT, 42 5)
+              COMBO(rshift_to_percent,     &kp PERCENT, 44 5)
+              COMBO(lshift_to_carrot,      &kp CARET, 42 6)
+              COMBO(rshift_to_carrot,      &kp CARET, 44 6)
+              COMBO(lshift_to_ampersand,   &kp AMPERSAND, 42 7)
+              COMBO(rshift_to_ampersand,   &kp AMPERSAND, 44 7)
+              COMBO(lshift_to_asterisk,    &kp ASTERISK, 42 8)
+              COMBO(rshift_to_asterisk,    &kp ASTERISK, 44 8)
+              COMBO(lshift_to_lpar,        &kp LPAR, 42 9)
+              COMBO(rshift_to_lpar,        &kp LPAR, 44 9)
+              COMBO(lshift_to_rpar,        &kp RPAR, 42 10)
+              COMBO(rshift_to_rpar,        &kp RPAR, 44 10)
        };
 
        macros {
@@ -58,7 +79,6 @@
                             , <&macro_release &kp LCTRL>
                             ;
               };
-//            Paste with no formatting
               sft_pt: sft_pt {
                      label = "Paste with no formatting";
                      compatible = "zmk,behavior-macro";
@@ -89,26 +109,36 @@
                             , <&macro_release &kp LGUI &kp LCTRL>
                             ;
               };
+              jtbr_cmt: jtbr_cmt {
+                     label = "JetBrains comment";
+                     compatible = "zmk,behavior-macro";
+                     #binding-cells = <0>;
+                     bindings
+                            = <&macro_press &kp LCTRL>
+                            , <&macro_tap &kp SLASH>
+                            ;
+              };
        };
 
 
        keymap {
               compatible = "zmk,keymap";
               default_layer {
+// COMBOS will be used to access the standard top row symbols.
 //     ----------------------------------------------------------------         ----------------------------------------------------------------
-//     | EQL  |  1   |  2   |  3   |  4   |  5   |                                                   |  6   |  7   |  8   |  9   |  0   | MINS |
+//     | EQL  | GRV  |  [   |  {   |  (   | HOME |                                                   | END  |  )   |  }   |  ]   | CMNT | MINS |
 //     | TAB  |  Q   |  W   |  E   |  R   |  T   |                                                   |  Y   |  U   |  I   |  O   |  P   | BSLS |
 //     | ESC  |  A   |  S   |  D   |  F   |  G   |                                                   |  H   |  J   |  K   |  L   | SCLN | QUOT |
 //     | SHFT |  Z   |  X   |  C   |  V   |  B   |      | CTL  | ALT  |         | PGUP | CTL  |      |  N   |  M   | COMM | DOT  | SLSH | SHFT |
 //            | GRV  | MOD  | LEFT | RGHT |      | BSPC | DEL  | HOME |         | PGDN | ENT  | SPC  |      |  UP  |  DN  | LBKT | RBKT |
 //                                                             | END  |         | WIN  |
                      bindings = <
-        &kp EQUAL  &kp N1  &kp N2   &kp N3   &kp N4    &kp N5                                                                    &kp N6    &kp N7    &kp N8    &kp N9     &kp N0    &kp MINUS
-        &kp TAB    &kp Q   &kp W    &kp E    &kp R     &kp T                                                                     &kp Y     &kp U     &kp I     &kp O      &kp P     &kp BSLH
-        &kp ESC    &kp A   &kp S    &kp D    &kp F     &kp G                                                                     &kp H     &kp J     &kp K     &kp L      &kp SEMI  &kp APOS
-        &kp LSHFT  &kp Z   &kp X    &kp C    &kp V     &kp B               &kp LCTRL &kp LALT      &kp PG_UP &kp RCTRL           &kp N     &kp M     &kp COMMA &kp PERIOD &kp SLASH &kp RSHFT
-                   &kp GRAVE &to 0  &kp LEFT &kp RIGHT           &kp BSPC  &kp DEL   &kp HOME      &kp PG_DN &kp ENTER &kp SPACE           &kp UP    &kp DOWN  &kp LBKT   &kp RBKT
-                                                                                     &kp END       &kp LGUI
+        &kp EQUAL  &kp GRAVE &kp LBKT &kp LBRC &kp LPAR  &kp HOME                                                                  &kp END   &kp RPAR  &kp RBRC  &kp RBKT     &jtbr_cmt &kp MINUS
+        &kp TAB    &kp Q     &kp W    &kp E    &kp R     &kp T                                                                     &kp Y     &kp U     &kp I     &kp O        &kp P     &kp BSLH
+        &kp ESC    &kp A     &kp S    &kp D    &kp F     &kp G                                                                     &kp H     &kp J     &kp K     &kp L        &kp SEMI  &kp APOS
+        &kp LSHFT  &kp Z     &kp X    &kp C    &kp V     &kp B               &kp LCTRL &kp LALT      &kp PG_UP &kp RCTRL           &kp N     &kp M     &kp COMMA &kp PERIOD   &kp SLASH &kp RSHFT
+                   &kp GRAVE &to 0    &kp LEFT &kp RIGHT           &kp BSPC  &kp DEL   &kp HOME      &kp PG_DN &kp ENTER &kp SPACE           &kp UP    &kp DOWN  &kp LBKT     &kp RBKT
+                                                                                       &kp END       &kp LGUI
                      >;
               };
               fn_layer {
