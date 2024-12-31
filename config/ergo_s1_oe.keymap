@@ -24,10 +24,10 @@
   };
 
 // TODO: create macro for generating hold-tap wrapper behavior
-#define HTAP(NAME, LABEL, BINDINGS) \
-  NAME: ##NAME { \
-    label = <LABEL>; \
-    compatible = "zmk,behavior-hold-tap"; \
+#define HTAP(NAME, LABELNUMBER, BINDINGS) \
+  NAME: H_##NAME { \
+    label = "Hold_tap_Wrapper_For_F" #LABELNUMBER; \
+    compatible = <zmk,behavior-hold-tap>; \
     #binding-cells = <2>; \
     flavor = "hold-preferred"; \
     tapping-term-ms = <400>; \
@@ -41,7 +41,7 @@
        // behavior-mod-morph's for the top row symbols.
        behaviors {
               compatible = "zmk,behavior-mod-morph,behavior-hold-tap";
-              HTAP(hpos_2, hold_wrapper_for_f3, &pos_2)
+              HTAP(hpos_2, 3, &pos_2)
               pos_1: pos_1 {
                      label = "Grave | Exclamation";
                      compatible = "zmk,behavior-mod-morph";
