@@ -25,14 +25,14 @@
 
 // TODO: create macro for generating hold-tap wrapper behavior
 #define HTAP(NAME, LABELNUMBER, BINDINGS) \
-  "h" #NAME ": " #NAME { \
+  ##NAME: H_##NAME { \
     label = "Hold_tap_Wrapper_For_F" #LABELNUMBER; \
     compatible = "zmk,behavior-hold-tap"; \
     #binding-cells = <2>; \
     flavor = "hold-preferred"; \
     tapping-term-ms = <400>; \
     quick-tap-ms = <200>; \
-    bindings = <&kp>, <BINDINGS>; \
+    bindings = <&kp>, <BINDINGS 0>; \
     hold-trigger-key-positions = <1>; \
   };
 
@@ -64,7 +64,7 @@
                      bindings = <&kp LBKT>, <&kp AT_SIGN>;
                      mods = <(MOD_LGUI|MOD_LSFT|MOD_RGUI|MOD_RSFT)>;
               };
-              HTAP(pos_2, 3, &pos_2)
+              HTAP(hpos_2, 3, &pos_2)
               pos_3: pos_3 {
                      label = "LBRC | HASH";
                      compatible = "zmk,behavior-mod-morph";
