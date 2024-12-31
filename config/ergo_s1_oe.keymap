@@ -24,9 +24,9 @@
   };
 
 // TODO: create macro for generating hold-tap wrapper behavior
-#define HTAP(NAME, LABEL, BINDING,) \
+#define HTAP(NAME, LABEL, BINDING) \
   ##NAME: ##NAME { \
-    label = <NAME>; \
+    label = <LABEL>; \
     compatible = "zmk,behavior-hold-tap"; \
     #binding-cells = <2>; \
     flavor = "hold-preferred"; \
