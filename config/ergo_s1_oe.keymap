@@ -64,7 +64,7 @@
                      bindings = <&kp LBKT>, <&kp AT_SIGN>;
                      mods = <(MOD_LGUI|MOD_LSFT|MOD_RGUI|MOD_RSFT)>;
               };
-              HTAP(hpos_2, Hold_Wrapper_for_F3, &pos_2 0)
+              HTAP(hpos_2, "wrapper", &pos_2 0)
               pos_3: pos_3 {
                      label = "LBRC | HASH";
                      compatible = "zmk,behavior-mod-morph";
