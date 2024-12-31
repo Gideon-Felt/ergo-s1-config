@@ -23,6 +23,20 @@
     layers = <0>; \
   };
 
+// TODO: create macro for generating hold-tap wrapper behavior
+#define HTAP(NAME, LABEL, BINDING,) \
+  ##NAME: ##NAME { \
+    label = <NAME>; \
+    compatible = "zmk,behavior-hold-tap"; \
+    #binding-cells = <2>; \
+    flavor = "hold-preferred"; \
+    tapping-term-ms = <400>; \
+    quick-tap-ms = <200>; \
+    bindings = <&kp>, <BINDING>; \
+    hold-trigger-key-positions = <1>; \
+  };
+
+
 / {
        behaviors {
               // behavior-mod-morph's for the top row symbols.
@@ -50,6 +64,7 @@
                      bindings = <&kp LBKT>, <&kp AT_SIGN>;
                      mods = <(MOD_LGUI|MOD_LSFT|MOD_RGUI|MOD_RSFT)>;
               };
+              HTAP(hpos_2, "Hold Wrapper for F3", &pos_2);
               pos_3: pos_3 {
                      label = "LBRC | HASH";
                      compatible = "zmk,behavior-mod-morph";
@@ -105,6 +120,17 @@
                      #binding-cells = <0>;
                      bindings = <&jtbr_cmt>, <&kp RPAR>;
                      mods = <(MOD_LGUI|MOD_LSFT|MOD_RGUI|MOD_RSFT)>;
+              };
+
+              hm: h_meta {
+                     label = "Hold Wrapper for Meta";
+                     compatible = "zmk,behavior-hold-tap";
+                     #binding-cells = <2>;
+                     flavor = "hold-preferred";
+                     tapping-term-ms = <400>;
+                     quick-tap-ms = <200>;
+                     bindings = <&to>, <&kp>;
+                     hold-trigger-key-positions = <1>;
               };
 
        };
@@ -196,11 +222,11 @@
 //            | GRV  | MOD  | LEFT | RGHT |      | BSPC | DEL  | HOME |         | PGDN | ENT  | SPC  |      |  UP  |  DN  | LBKT | RBKT |
 //                                                             | WIN  |         | WIN  |
                      bindings = <
-       &kp EQUAL  &hpos_1 F2 0 &pos_2   &pos_3   &pos_4    &pos_5                                                                 &pos_6    &pos_7    &pos_8    &pos_9     &pos_10      &kp MINUS
+       &kp EQUAL  &hpos_1 F2 0 &hpos_2 &pos_3  &pos_4    &pos_5                                                                    &pos_6    &pos_7    &pos_8    &pos_9     &pos_10      &kp MINUS
        &kp TAB    &kp Q     &kp W    &kp E    &kp R     &kp T                                                                     &kp Y     &kp U     &kp I     &kp O      &kp P        &kp BSLH
        &kp ESC    &kp A     &kp S    &kp D    &kp F     &kp G                                                                     &kp H     &kp J     &kp K     &kp L      &kp SEMI     &kp APOS
        &sk LSHFT  &kp Z     &kp X    &kp C    &kp V     &kp B            &sk LCTRL  &kp LALT      &kp PG_UP &sk RCTRL             &kp N     &kp M     &kp COMMA &kp PERIOD &kp SLASH    &sk RSHFT
-                  &kp TILDE &to 0    &kp LEFT &kp RIGHT        &kp BSPC  &kp DEL    &kp HOME      &kp PG_DN &kp ENTER &kp SPACE             &kp UP    &kp DOWN  &kp LBKT   &kp RBKT
+                  &kp TILDE &hm 0 LMETA  &kp LEFT &kp RIGHT      &kp BSPC  &kp DEL  &kp HOME      &kp PG_DN &kp ENTER &kp SPACE             &kp UP    &kp DOWN  &kp LBKT   &kp RBKT
                                                                                     &kp LGUI      &kp RGUI
                      >;
               };
