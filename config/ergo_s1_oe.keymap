@@ -38,8 +38,10 @@
 
 
 / {
+       // behavior-mod-morph's for the top row symbols.
        behaviors {
-              // behavior-mod-morph's for the top row symbols.
+              compatible = "zmk,behavior-mod-morph,behavior-hold-tap";
+              HTAP(hpos_2, hold_wrapper_for_f3, &pos_2)
               pos_1: pos_1 {
                      label = "Grave | Exclamation";
                      compatible = "zmk,behavior-mod-morph";
@@ -64,7 +66,6 @@
                      bindings = <&kp LBKT>, <&kp AT_SIGN>;
                      mods = <(MOD_LGUI|MOD_LSFT|MOD_RGUI|MOD_RSFT)>;
               };
-              HTAP(hpos_2, "wrapper", &pos_2)
               pos_3: pos_3 {
                      label = "LBRC | HASH";
                      compatible = "zmk,behavior-mod-morph";
