@@ -29,7 +29,7 @@
               pos_1: pos_1 {
                      label = "Grave | Exclamation";
                      compatible = "zmk,behavior-mod-morph";
-                     #binding-cells = <0>;
+                     #binding-cells = <1>;
                      bindings = <&kp GRAVE>, <&kp EXCL>;
                      mods = <(MOD_LGUI|MOD_LSFT|MOD_RGUI|MOD_RSFT)>;
               };
