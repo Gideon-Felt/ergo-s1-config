@@ -25,7 +25,7 @@
 
 // TODO: create macro for generating hold-tap wrapper behavior
 #define HTAP(NAME, LABEL, BINDINGS) \
-  h_##NAME { \
+  NAME: ##NAME { \
     label = <LABEL>; \
     compatible = "zmk,behavior-hold-tap"; \
     #binding-cells = <2>; \
@@ -64,7 +64,7 @@
                      bindings = <&kp LBKT>, <&kp AT_SIGN>;
                      mods = <(MOD_LGUI|MOD_LSFT|MOD_RGUI|MOD_RSFT)>;
               };
-              hpos_2: HTAP(hpos_2, "Hold Wrapper for F3", &pos_2)
+              HTAP(hpos_2, "Hold Wrapper for F3", &pos_2)
               pos_3: pos_3 {
                      label = "LBRC | HASH";
                      compatible = "zmk,behavior-mod-morph";
