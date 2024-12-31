@@ -29,17 +29,18 @@
               pos_1: pos_1 {
                      label = "Grave | Exclamation";
                      compatible = "zmk,behavior-mod-morph";
-                     #binding-cells = <1>;
+                     #binding-cells = <0>;
                      bindings = <&kp GRAVE>, <&kp EXCL>;
                      mods = <(MOD_LGUI|MOD_LSFT|MOD_RGUI|MOD_RSFT)>;
               };
-              hpos_1: hold_pos_1 {
+              hpos_1: hpos_1 {
                      compatible = "zmk,behavior-hold-tap";
                      #binding-cells = <2>;
                      flavor = "hold-preferred";
                      tapping-term-ms = <400>;
                      quick-tap-ms = <200>;
                      bindings = <&pos_1>, <&kp>;
+                     hold-trigger-key-positions = <1>;
               };
               pos_2: pos_2 {
                      label = "LBKT | AT_SIGN";
