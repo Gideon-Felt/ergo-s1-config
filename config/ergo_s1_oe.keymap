@@ -222,7 +222,7 @@
 //            | GRV  | MOD  | LEFT | RGHT |      | BSPC | DEL  | HOME |         | PGDN | ENT  | SPC  |      |  UP  |  DN  | LBKT | RBKT |
 //                                                             | WIN  |         | WIN  |
                      bindings = <
-       &kp EQUAL  &hpos_1 F2 0 &hpos_2 &pos_3  &pos_4    &pos_5                                                                    &pos_6    &pos_7    &pos_8    &pos_9     &pos_10      &kp MINUS
+       &kp EQUAL  &hpos_1 F2 0 &hpos_2 F3 0 &pos_3  &pos_4    &pos_5                                                                    &pos_6    &pos_7    &pos_8    &pos_9     &pos_10      &kp MINUS
        &kp TAB    &kp Q     &kp W    &kp E    &kp R     &kp T                                                                     &kp Y     &kp U     &kp I     &kp O      &kp P        &kp BSLH
        &kp ESC    &kp A     &kp S    &kp D    &kp F     &kp G                                                                     &kp H     &kp J     &kp K     &kp L      &kp SEMI     &kp APOS
        &sk LSHFT  &kp Z     &kp X    &kp C    &kp V     &kp B            &sk LCTRL  &kp LALT      &kp PG_UP &sk RCTRL             &kp N     &kp M     &kp COMMA &kp PERIOD &kp SLASH    &sk RSHFT
