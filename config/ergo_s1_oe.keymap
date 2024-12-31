@@ -33,6 +33,14 @@
                      bindings = <&mt GRAVE F2>, <&kp EXCL>;
                      mods = <(MOD_LGUI|MOD_LSFT|MOD_RGUI|MOD_RSFT)>;
               };
+              ttf2: tap_to_f2 {
+                     compatible = "zmk,behavior-hold-tap";
+                     #binding-cells = <2>;
+                     flavor = "hold-preferred";
+                     tapping-term-ms = <200>;
+                     // quick-tap-ms = <200>;
+                     bindings = <&pos_1>, <&kp F2>;
+              };
               pos_2: pos_2 {
                      label = "LBKT | AT_SIGN";
                      compatible = "zmk,behavior-mod-morph";
@@ -186,7 +194,7 @@
 //            | GRV  | MOD  | LEFT | RGHT |      | BSPC | DEL  | HOME |         | PGDN | ENT  | SPC  |      |  UP  |  DN  | LBKT | RBKT |
 //                                                             | WIN  |         | WIN  |
                      bindings = <
-       &kp EQUAL  &pos_1    &pos_2   &pos_3   &pos_4    &pos_5                                                                    &pos_6    &pos_7    &pos_8    &pos_9     &pos_10      &kp MINUS
+       &kp EQUAL  &ttf2     &pos_2   &pos_3   &pos_4    &pos_5                                                                    &pos_6    &pos_7    &pos_8    &pos_9     &pos_10      &kp MINUS
        &kp TAB    &kp Q     &kp W    &kp E    &kp R     &kp T                                                                     &kp Y     &kp U     &kp I     &kp O      &kp P        &kp BSLH
        &kp ESC    &kp A     &kp S    &kp D    &kp F     &kp G                                                                     &kp H     &kp J     &kp K     &kp L      &kp SEMI     &kp APOS
        &sk LSHFT  &kp Z     &kp X    &kp C    &kp V     &kp B            &sk LCTRL  &kp LALT      &kp PG_UP &sk RCTRL             &kp N     &kp M     &kp COMMA &kp PERIOD &kp SLASH    &sk RSHFT
