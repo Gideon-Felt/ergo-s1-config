@@ -34,6 +34,7 @@
                      mods = <(MOD_LGUI|MOD_LSFT|MOD_RGUI|MOD_RSFT)>;
               };
               hpos_1: hpos_1 {
+                     label = "Hold Wrapper for F2";
                      compatible = "zmk,behavior-hold-tap";
                      #binding-cells = <2>;
                      flavor = "hold-preferred";
