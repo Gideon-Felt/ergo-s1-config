@@ -26,6 +26,7 @@
 // TODO: create macro for generating hold-tap wrapper behavior
 #define HTAP(NAME, LABELNUMBER, BINDINGS) \
 //   NAME: H_##NAME { \
+//   h##NAME: h_##NAME { \
   #NAME: #NAME { \
     label = "Hold_tap_Wrapper_For_F" #LABELNUMBER; \
     compatible = "zmk,behavior-hold-tap"; \
@@ -65,7 +66,7 @@
                      bindings = <&kp LBKT>, <&kp AT_SIGN>;
                      mods = <(MOD_LGUI|MOD_LSFT|MOD_RGUI|MOD_RSFT)>;
               };
-              HTAP(hpos_2, 3, &pos_2)
+              // HTAP(hpos_2, 3, &pos_2)
               pos_3: pos_3 {
                      label = "LBRC | HASH";
                      compatible = "zmk,behavior-mod-morph";
@@ -223,7 +224,7 @@
 //            | GRV  | MOD  | LEFT | RGHT |      | BSPC | DEL  | HOME |         | PGDN | ENT  | SPC  |      |  UP  |  DN  | LBKT | RBKT |
 //                                                             | WIN  |         | WIN  |
                      bindings = <
-       &kp EQUAL  &hpos_1 F2 0 &hpos_2 F3 0 &pos_3  &pos_4    &pos_5                                                                    &pos_6    &pos_7    &pos_8    &pos_9     &pos_10      &kp MINUS
+       &kp EQUAL  &hpos_1 F2 0 &mt F3 pos_2  &pos_3  &pos_4    &pos_5                                                                    &pos_6    &pos_7    &pos_8    &pos_9     &pos_10      &kp MINUS
        &kp TAB    &kp Q     &kp W    &kp E    &kp R     &kp T                                                                     &kp Y     &kp U     &kp I     &kp O      &kp P        &kp BSLH
        &kp ESC    &kp A     &kp S    &kp D    &kp F     &kp G                                                                     &kp H     &kp J     &kp K     &kp L      &kp SEMI     &kp APOS
        &sk LSHFT  &kp Z     &kp X    &kp C    &kp V     &kp B            &sk LCTRL  &kp LALT      &kp PG_UP &sk RCTRL             &kp N     &kp M     &kp COMMA &kp PERIOD &kp SLASH    &sk RSHFT
