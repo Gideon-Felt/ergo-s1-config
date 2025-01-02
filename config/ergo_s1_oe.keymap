@@ -140,6 +140,16 @@
                             , <&macro_release &kp LCTRL>
                             ;
               };
+              fst_save: fst_save {
+                     label = "single_key_save";
+                     compatible = "zmk,behavior-macro";
+                     #binding-cells = <0>;
+                     bindings
+                            = <&macro_press &kp LCTRL>
+                            , <&macro_tap &kp S>
+                            , <&macro_release &kp LCTRL>
+                            ;
+              };
               sft_pt: sft_pt {
                      label = "Paste with no formatting";
                      compatible = "zmk,behavior-macro";
@@ -199,7 +209,7 @@
        &kp TAB    &kp Q     &kp W    &kp E    &kp R     &kp T                                                                     &kp Y     &kp U     &kp I     &kp O      &kp P        &kp BSLH
        &kp ESC    &kp A     &kp S    &kp D    &kp F     &kp G                                                                     &kp H     &kp J     &kp K     &kp L      &kp SEMI     &kp APOS
        &kp LSHFT  &kp Z     &kp X    &kp C    &kp V     &kp B            &sk LCTRL  &kp LALT      &kp PG_UP &sk RCTRL             &kp N     &kp M     &kp COMMA &kp PERIOD &kp SLASH    &kp RSHFT
-                  &kp TILDE &to 0    &kp LEFT &kp RIGHT        &kp BSPC  &kp DEL    &kp C_AC_SAVE &kp PG_DN &kp ENTER &kp SPACE             &kp UP    &kp DOWN  &kp K_COPY &kp K_PASTE
+                  &kp TILDE &to 0    &kp LEFT &kp RIGHT        &kp BSPC  &kp DEL    &fst_save     &kp PG_DN &kp ENTER &kp SPACE             &kp UP    &kp DOWN  &fst_cp    &fst_pt
                                                                                     &kp LMETA     &kp RMETA
                      >;
               };
